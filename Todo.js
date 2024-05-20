@@ -1,3 +1,6 @@
+// Importing Error logger class
+import ErrorLog from "./Error";
+
 // Todo class
 
 class Todo {
@@ -35,6 +38,10 @@ class Todo {
     }
 
     set priority(newPriority) {
+        if (typeof(newPriority) != Boolean) {
+            ErrorLog.log("Input is not a boolean type. Input Boolean");
+        }
+        
         this._priority = newPriority;
     }
 
