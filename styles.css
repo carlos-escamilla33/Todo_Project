@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F8F4E1;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+#projects {
+    background-color: #FFF2D7;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#todos {
+    background-color: #F8F4E1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
