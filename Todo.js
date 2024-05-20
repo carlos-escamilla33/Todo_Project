@@ -73,3 +73,5 @@ class Todo {
         this._complete = newComplete;
     }
 }
+
+export default Todo;
