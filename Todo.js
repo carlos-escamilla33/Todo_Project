@@ -5,11 +5,12 @@ import ErrorLog from "./Error";
 
 class Todo {
     constructor(title = "", description = "",
-     dueDate = "", priority = false) {
+     dueDate = "", priority = false, complete = false) {
         this._title = title;
         this._description = description;
         this._dueDate = dueDate;
         this._priority = priority;
+        this._complete = complete;
     }
 
     // methods (setters/getters)
@@ -61,5 +62,14 @@ class Todo {
 
     get priority() {
         return this._priority;
+    }
+
+    set complete(newComplete) {
+        if (typeof(newComplete) != Boolean) {
+            ErrorLog.log("Input is not a boolean type. Input Boolean");
+            return;
+        }
+
+        this._complete = newComplete;
     }
 }
