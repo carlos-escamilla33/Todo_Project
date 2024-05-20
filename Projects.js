@@ -12,7 +12,7 @@ class Project {
         this._length = 0;
     }
 
-    // methods
+    // methods (getters/setters)
 
     set title(newTitle) {
         if (typeof(newTitle) != String) {
@@ -30,6 +30,8 @@ class Project {
         return this._length;
     }
 
+    // methods (Mutators)
+
     append(todo) {
         if (!(todo instanceof Todo)) {
             ErrorLog.log("Argument must be an instance of Todo");
@@ -41,20 +43,17 @@ class Project {
     }
 
     deleteByIdx(todoIdx) {
-        if (!(todo instanceof Todo)) {
-            ErrorLog.log("Argument must be an instance of Todo");
-        }
-
         if (todoIdx < 0 || todoIdx >= this._length) {
            ErrorLog.log(`${todoIdx} is not in range`);
+           return;
         }
 
-        for (let i = 0; i < this._length; i ++) {
-            if (i == todoIdx) {
-                this._todos.splice(todoIdx, i);
-            }
-        }
+        this._todos.splice(todoIdx, 1);
+        //bookeeping
+        this._length -= 1;
+         
     }
 }
 
 export default Project;
+
