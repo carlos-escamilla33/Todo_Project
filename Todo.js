@@ -4,16 +4,21 @@ import ErrorLog from "./Error";
 // Todo class
 
 class Todo {
-    constructor() {
-        this._title = "";
-        this._description = "";
-        this._dueDate = "";
-        this._priority = false;
+    constructor(title = "", description = "",
+     dueDate = "", priority = false) {
+        this._title = title;
+        this._description = description;
+        this._dueDate = dueDate;
+        this._priority = priority;
     }
 
-    // methods
+    // methods (setters/getters)
 
     set title(newTitle) {
+        if (typeof(newTitle) != String) {
+            ErrorLog.log("Input is not a string type. Input string");
+            return;
+        }
         this._title = newTitle;
     }
 
@@ -22,6 +27,10 @@ class Todo {
     }
 
     set description(newDes) {
+        if (typeof(newDes) != String) {
+            ErrorLog.log("Input is not a string type. Input string");
+            return;
+        }
         this._description = newDes;
     }
 
@@ -30,6 +39,10 @@ class Todo {
     }
 
     set dueDate(newDueDate) {
+        if (typeof(newDueDate) != String) {
+            ErrorLog.log("Input is not a string type. Input string");
+            return;
+        }
         this._dueDate = newDueDate;
     }
 
@@ -40,8 +53,9 @@ class Todo {
     set priority(newPriority) {
         if (typeof(newPriority) != Boolean) {
             ErrorLog.log("Input is not a boolean type. Input Boolean");
+            return;
         }
-        
+
         this._priority = newPriority;
     }
 
