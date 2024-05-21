@@ -6,9 +6,9 @@ import ErrorLog from "./Error";
 // Carries all of the todos in an array/list
 
 class Project {
-    constructor(title = "", todos = []) {
+    constructor(title = "") {
         this._title = title;
-        this._todos = todos;
+        this._todos = [];
         this._length = 0;
     }
 

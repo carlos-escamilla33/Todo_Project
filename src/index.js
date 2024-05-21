@@ -3,9 +3,18 @@ import Project from "./classes/Project";
 
 let listOfProjectsClass = document.getElementsByClassName("projects-list-container");
 
-let defaultTodo = new Todo("Get Food", "Check peoples bins for food", "Today");
+const createProject = (e) => {
+    const clickedBtn = e.target;
+    const className = clickedBtn.className;
 
-defaultTodo.title = "NOT MORE FOOD";
+    if (className != "add-img") {
+        return;
+    }
 
-console.log(defaultTodo.title);
+    let project = new Project();
 
+    
+}
+
+
+document.addEventListener("click", createProject);
