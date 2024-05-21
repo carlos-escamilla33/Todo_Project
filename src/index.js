@@ -5,6 +5,7 @@ let listOfProjectsClass = document.getElementsByClassName("projects-list-contain
 let addBtn = document.querySelector(".add-img");
 let projectFormOpenBtn = document.getElementById("show-form");
 let projectFormCloseBtn = document.getElementById("close-form");
+let formContainer = document.querySelector(".form-container");
 
 
 const openProjectForm = () => {
@@ -17,17 +18,40 @@ const closeProjectForm = () => {
     document.getElementById("form-overlay").style.display = "none";
 }
 
+const getProjectContents = () => {
+
+    let form = document.querySelector(".form-container");
+    const formData = {};
+
+    for (let element of form.elements) {
+        if (element.tagName.toLowerCase() === "button") {
+            continue;
+        }
+
+        formData[element.name] = element.value;
+    }
+
+    return formData;
+}
+
 const createProject = (e) => {
-    const clickedBtn = e.target;
-    const className = clickedBtn.className;
+    e.preventDefault();
 
-    let project = new Project();
+    const projectData = getProjectContents();
+    let project = new Project(projectData.name);
 
-    
+    let projectElement = document.createElement('div');
+    projectElement.className = 'project';
+    projectElement.textContent = `Title: ${project.title}`;
+
+    listOfProjectsClass.appendChild(projectElement);
+
+    closeProjectForm();
 }
 
 
 
-addBtn.addEventListener("click", createProject);
+// addBtn.addEventListener("click", createProject);
 projectFormCloseBtn.addEventListener("click", closeProjectForm);
 projectFormOpenBtn.addEventListener("click", openProjectForm);
+formContainer.addEventListener("submit", createProject);
