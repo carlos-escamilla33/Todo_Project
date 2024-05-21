@@ -5,6 +5,7 @@ let listOfProjectsClass = document.querySelector(".projects-list-container");
 let projectFormOpenBtn = document.getElementById("show-form");
 let projectFormCloseBtn = document.getElementById("close-form");
 let formContainer = document.querySelector(".form-container");
+let projectIdx = 0;
 
 
 const openProjectForm = () => {
@@ -36,7 +37,6 @@ const getProjectContents = () => {
     return formData;
 }
 
-// START WITH THIS FUNCTION 05/20/24
 const createProject = (e) => {
     e.preventDefault();
 
@@ -44,8 +44,12 @@ const createProject = (e) => {
     let project = new Project(projectData.name);
 
     let projectElement = document.createElement('div');
-    projectElement.className = 'project';
+    projectElement.className = 'project-card';
     projectElement.textContent = `# ${project.title}`;
+    projectElement.setAttribute("data-id", projectIdx);
+
+    //update project id to next value
+    projectIdx += 1;
 
     listOfProjectsClass.appendChild(projectElement);
 
