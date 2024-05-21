@@ -1,12 +1,13 @@
 import Todo from "./classes/Todo";
 import Project from "./classes/Project";
 
-let listOfProjectsClass = document.querySelector(".projects-list-container");
+let projectsDiv = document.querySelector(".projects-list-container");
 let projectFormOpenBtn = document.getElementById("show-form");
 let projectFormCloseBtn = document.getElementById("close-form");
 let formContainer = document.querySelector(".form-container");
 let projectIdx = 0;
 
+// console.log(projectsArr[0].getAttribute("data-id"));
 
 const openProjectForm = () => {
     console.log("opening...");
@@ -56,9 +57,15 @@ const createProject = (e) => {
     //update project id to next value
     projectIdx += 1;
 
-    listOfProjectsClass.appendChild(projectElement);
+    projectsDiv.appendChild(projectElement);
 
     closeProjectForm();
+}
+
+const showTodos = (e) => {
+    if (e.target.classList.contains("project-card")) {
+        console.log("clicked on a project card");
+    }
 }
 
 
@@ -67,3 +74,4 @@ const createProject = (e) => {
 projectFormCloseBtn.addEventListener("click", closeProjectForm);
 projectFormOpenBtn.addEventListener("click", openProjectForm);
 formContainer.addEventListener("submit", createProject);
+projectsDiv.addEventListener("click", showTodos);
