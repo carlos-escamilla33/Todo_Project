@@ -1,8 +1,7 @@
 import Todo from "./classes/Todo";
 import Project from "./classes/Project";
 
-let listOfProjectsClass = document.getElementsByClassName("projects-list-container");
-let addBtn = document.querySelector(".add-img");
+let listOfProjectsClass = document.querySelector(".projects-list-container");
 let projectFormOpenBtn = document.getElementById("show-form");
 let projectFormCloseBtn = document.getElementById("close-form");
 let formContainer = document.querySelector(".form-container");
@@ -16,6 +15,7 @@ const openProjectForm = () => {
 const closeProjectForm = () => {
     console.log("closing...");
     document.getElementById("form-overlay").style.display = "none";
+    formContainer.reset();
 }
 
 const getProjectContents = () => {
@@ -31,9 +31,12 @@ const getProjectContents = () => {
         formData[element.name] = element.value;
     }
 
+    formContainer.reset();
+
     return formData;
 }
 
+// START WITH THIS FUNCTION 05/20/24
 const createProject = (e) => {
     e.preventDefault();
 
@@ -42,7 +45,7 @@ const createProject = (e) => {
 
     let projectElement = document.createElement('div');
     projectElement.className = 'project';
-    projectElement.textContent = `Title: ${project.title}`;
+    projectElement.textContent = `# ${project.title}`;
 
     listOfProjectsClass.appendChild(projectElement);
 
