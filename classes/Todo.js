@@ -5,12 +5,12 @@ import ErrorLog from "./Error";
 
 class Todo {
     constructor(title = "", description = "",
-     dueDate = "", priority = false, complete = false) {
+     dueDate = "") {
         this._title = title;
         this._description = description;
         this._dueDate = dueDate;
-        this._priority = priority;
-        this._complete = complete;
+        this._priority = false;
+        this._complete = false;
     }
 
     // methods (setters/getters)
