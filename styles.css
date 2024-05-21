@@ -18,7 +18,7 @@ body {
 
 /* Top section of Projects(Profile) */
 
-.profile {
+.profile-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -46,6 +46,41 @@ body {
     background-position: center;
     border-radius: 50%;
 }
+
+.profile-name {
+    font-weight: bold;
+    width: 60%;
+    font-size: 20px;
+}
+
+/* Adding a project img(In projects section) */
+
+.add-container {
+    margin-top: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.add-img {
+    width: 30px;
+    height: 30px;
+    background-image: url("./images/add.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.add-text {
+    font-weight: bold;
+    width: 60%;
+    color: #3D3B40;
+}
+
 
 /* Todos Section */
 
