@@ -123,6 +123,8 @@ body {
 .form-container > input {
     height: 30px;
     font-size: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,.3);
+    border: none;
 }
 
 .form-container > button {
@@ -131,6 +133,7 @@ body {
     border: none;
     border-radius: 10px;
     color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,.3);
 }
 
 .form-container #submit-btn {
