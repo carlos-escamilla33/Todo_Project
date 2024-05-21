@@ -5,8 +5,7 @@ let listOfProjectsClass = document.getElementsByClassName("projects-list-contain
 
 let defaultTodo = new Todo("Get Food", "Check peoples bins for food", "Today");
 
-console.log(defaultTodo);
+defaultTodo.title = "NOT MORE FOOD";
 
-console.log(listOfProjectsClass);
+console.log(defaultTodo.title);
 
-console.log("hello world");

@@ -16,7 +16,7 @@ class Todo {
     // methods (setters/getters)
 
     set title(newTitle) {
-        if (typeof(newTitle) != String) {
+        if (typeof(newTitle) != "string") {
             ErrorLog.log("Input is not a string type. Input string");
             return;
         }
@@ -24,11 +24,11 @@ class Todo {
     }
 
     get title() {
-        return this_title;
+        return this._title;
     }
 
     set description(newDes) {
-        if (typeof(newDes) != String) {
+        if (typeof(newDes) != "string") {
             ErrorLog.log("Input is not a string type. Input string");
             return;
         }
@@ -40,7 +40,7 @@ class Todo {
     }
 
     set dueDate(newDueDate) {
-        if (typeof(newDueDate) != String) {
+        if (typeof(newDueDate) != "string") {
             ErrorLog.log("Input is not a string type. Input string");
             return;
         }
@@ -52,7 +52,7 @@ class Todo {
     }
 
     set priority(newPriority) {
-        if (typeof(newPriority) != Boolean) {
+        if (typeof(newPriority) != "boolean") {
             ErrorLog.log("Input is not a boolean type. Input Boolean");
             return;
         }
@@ -65,7 +65,7 @@ class Todo {
     }
 
     set complete(newComplete) {
-        if (typeof(newComplete) != Boolean) {
+        if (typeof(newComplete) != "boolean") {
             ErrorLog.log("Input is not a boolean type. Input Boolean");
             return;
         }

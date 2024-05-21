@@ -15,7 +15,7 @@ class Project {
     // methods (getters/setters)
 
     set title(newTitle) {
-        if (typeof(newTitle) != String) {
+        if (typeof(newTitle) != "string") {
             ErrorLog.log("Input is not a string type. Input string");
             return;
         }
