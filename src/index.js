@@ -41,6 +41,11 @@ const createProject = (e) => {
     e.preventDefault();
 
     const projectData = getProjectContents();
+
+    if (projectData.name == "") {
+        return;
+    }
+
     let project = new Project(projectData.name);
 
     let projectElement = document.createElement('div');
