@@ -5,7 +5,7 @@ let projectsDiv = document.querySelector(".projects-list-container");
 let projectFormOpenBtn = document.getElementById("show-form");
 let projectFormCloseBtn = document.getElementById("close-form");
 let formContainer = document.querySelector(".form-container");
-let todosContainer = document.querySelector(".todos-container");
+let todosSection = document.querySelector("#todos-section");
 let projectsArr = [];
 let currProject;
 
@@ -85,7 +85,7 @@ const createProjectHeader = (project) => {
     todoDiv.appendChild(title);
     todoDiv.appendChild(createTodoBtn);
 
-    todosContainer.appendChild(todoDiv);
+    todosSection.appendChild(todoDiv);
 }
 
 const selectProject = (e) => {
