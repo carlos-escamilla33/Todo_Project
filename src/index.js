@@ -5,7 +5,7 @@ let projectsDiv = document.querySelector(".projects-list-container");
 let projectFormOpenBtn = document.getElementById("show-form");
 let projectFormCloseBtn = document.getElementById("close-form");
 let formContainer = document.querySelector(".form-container");
-let todoInput = document.querySelector("todo-input");
+let todosContainer = document.querySelector(".todos-container");
 let projectsArr = [];
 let currProject;
 
@@ -67,12 +67,32 @@ const createProject = (e) => {
 const showTodos = (project) => {
     // display projects todos
     console.log(project.todos);
+    // createTodos(project);
+
+}
+
+// event listener on add btn
+const createProjectHeader = (project) => {
+    let todoDiv = document.createElement("div");
+    let title = document.createElement("h1");
+    let createTodoBtn = document.createElement("button");
+
+    createTodoBtn.classList.add("create-todo-btn");
+
+    title.textContent = project.title;
+    createTodoBtn.textContent = "Add Todo";
+
+    todoDiv.appendChild(title);
+    todoDiv.appendChild(createTodoBtn);
+
+    todosContainer.appendChild(todoDiv);
 }
 
 const selectProject = (e) => {
     if (e.target.classList.contains("project-card")) {
         currProject = projectsArr[e.target.getAttribute("data-id")];
         console.log(currProject);
+        createProjectHeader(currProject);
         showTodos(currProject);
     }
 }
