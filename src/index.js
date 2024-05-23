@@ -5,7 +5,8 @@ let projectsDiv = document.querySelector(".projects-list-container");
 let projectFormOpenBtn = document.getElementById("show-form");
 let projectFormCloseBtn = document.getElementById("close-form");
 let formContainer = document.querySelector(".form-container");
-let projectIdx = 0;
+let projectsArr = [];
+let currProject;
 
 // console.log(projectsArr[0].getAttribute("data-id"));
 
@@ -52,19 +53,25 @@ const createProject = (e) => {
     let projectElement = document.createElement('div');
     projectElement.className = 'project-card';
     projectElement.textContent = `# ${project.title}`;
-    projectElement.setAttribute("data-id", projectIdx);
 
     //update project id to next value
-    projectIdx += 1;
+    projectsArr.push(project);
+    projectElement.setAttribute("data-id", projectsArr.length - 1);
 
     projectsDiv.appendChild(projectElement);
 
     closeProjectForm();
 }
 
-const showTodos = (e) => {
+const showTodos = (project) => {
+    // display projects todos
+    // project._todos
+}
+
+const selectProject = (e) => {
     if (e.target.classList.contains("project-card")) {
-        console.log("clicked on a project card");
+        currProject = projectsArr[e.target.getAttribute("data-id")];
+        showTodos(project);
     }
 }
 
@@ -74,4 +81,4 @@ const showTodos = (e) => {
 projectFormCloseBtn.addEventListener("click", closeProjectForm);
 projectFormOpenBtn.addEventListener("click", openProjectForm);
 formContainer.addEventListener("submit", createProject);
-projectsDiv.addEventListener("click", showTodos);
+projectsDiv.addEventListener("click", selectProject);

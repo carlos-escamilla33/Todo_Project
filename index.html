@@ -25,29 +25,35 @@
       </div>
       <div class="projects-list-container">
         <div>
-            <div class="project-card" data-id="0"># Get Food</div>
+          <div class="project-card" data-id="0"># Get Food</div>
         </div>
       </div>
     </section>
 
     <section id="todos">
+      <div>
         <h1 class="project-title">Get Food</h1>
+        <form class="form-todo-container">
+          <input type="text" name="name" placeholder="Todo Title" />
+          <button type="submit" id="submit-btn">Add Todo</button>
+        </form>
         <ul class="todos-container">
-            <li>Check neigher's bin</li>
-            <li>711 dumpster run</li>
-            <li>Check with other racoons for food</li>
+          <li>Check neigher's bin</li>
+          <li>711 dumpster run</li>
+          <li>Check with other racoons for food</li>
         </ul>
+      </div>
     </section>
 
     <!-- Project and Todo Froms-->
 
     <div id="form-overlay" class="form-overlay">
-        <form class="form-container">
-            <h2>Create a Project</h2>
-            <input type="text" id="name" name="name" placeholder="Project Title">
-            <button type="submit" id="submit-btn">Submit</button>
-            <button type="button" id="close-form">Close</button>
-        </form>
+      <form class="form-container">
+        <h2>Create a Project</h2>
+        <input type="text" id="name" name="name" placeholder="Project Title" />
+        <button type="submit" id="submit-btn">Add Project</button>
+        <button type="button" id="close-form">Close</button>
+      </form>
     </div>
   </body>
 </html>

@@ -8,7 +8,7 @@ import ErrorLog from "./Error";
 class Project {
     constructor(title = "") {
         this._title = title;
-        this._todos = [];
+        this.todos = [];
         this._length = 0;
     }
 
@@ -37,7 +37,7 @@ class Project {
             ErrorLog.log("Argument must be an instance of Todo");
         }
 
-        this._todos.push(todo);
+        this.todos.push(todo);
         //bookkeeping
         this._length += 1;
     }
@@ -48,7 +48,7 @@ class Project {
            return;
         }
 
-        this._todos.splice(todoIdx, 1);
+        this.todos.splice(todoIdx, 1);
         //bookeeping
         this._length -= 1;
          
