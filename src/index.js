@@ -92,7 +92,10 @@ const selectProject = (e) => {
     if (e.target.classList.contains("project-card")) {
         currProject = projectsArr[e.target.getAttribute("data-id")];
         console.log(currProject);
-        createProjectHeader(currProject);
+        if (!currProject.isSelected) {
+            createProjectHeader(currProject);
+            currProject.isSelected = true;
+        }
         showTodos(currProject);
     }
 }

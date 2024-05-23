@@ -10,6 +10,7 @@ class Project {
         this._title = title;
         this.todos = [];
         this._length = 0;
+        this.isSelected = false;
     }
 
     // methods (getters/setters)
@@ -29,6 +30,8 @@ class Project {
     get length() {
         return this._length;
     }
+
+    
 
     // methods (Mutators)
 
