@@ -5,6 +5,7 @@ let projectsDiv = document.querySelector(".projects-list-container");
 let projectFormOpenBtn = document.getElementById("show-form");
 let projectFormCloseBtn = document.getElementById("close-form");
 let formContainer = document.querySelector(".form-container");
+let todoInput = document.querySelector("todo-input");
 let projectsArr = [];
 let currProject;
 
@@ -65,13 +66,14 @@ const createProject = (e) => {
 
 const showTodos = (project) => {
     // display projects todos
-    // project._todos
+    console.log(project.todos);
 }
 
 const selectProject = (e) => {
     if (e.target.classList.contains("project-card")) {
         currProject = projectsArr[e.target.getAttribute("data-id")];
-        showTodos(project);
+        console.log(currProject);
+        showTodos(currProject);
     }
 }
 

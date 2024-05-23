@@ -51,7 +51,6 @@ class Project {
         this.todos.splice(todoIdx, 1);
         //bookeeping
         this._length -= 1;
-         
     }
 }
 
