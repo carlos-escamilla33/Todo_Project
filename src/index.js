@@ -12,12 +12,10 @@ let currProject;
 // console.log(projectsArr[0].getAttribute("data-id"));
 
 const openProjectForm = () => {
-    console.log("opening...");
     document.getElementById("form-overlay").style.display = "flex";
 }
 
 const closeProjectForm = () => {
-    console.log("closing...");
     document.getElementById("form-overlay").style.display = "none";
     formContainer.reset();
 }
@@ -91,7 +89,6 @@ const createProjectHeader = (project) => {
 const selectProject = (e) => {
     if (e.target.classList.contains("project-card")) {
         currProject = projectsArr[e.target.getAttribute("data-id")];
-        console.log(currProject);
         if (!currProject.isSelected) {
             createProjectHeader(currProject);
             currProject.isSelected = true;
